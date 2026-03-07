@@ -28,13 +28,13 @@
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:type" content="website">
         <meta property="og:title" content="Pulso Notícias">
-        <meta property="og:description" content="Portal de notícias de Vida Nova e Lauro de Freitas. Pulso Notícias cobre segurança, eventos, serviços públicos e tudo o que acontece no bairro.">
+        <meta property="og:description" content="Pulso Notícias é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo.">
         <meta property="og:image" content="{{asset('build/client/images/logo-blog.png')}}">
 
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:url" content="{{ url()->current() }}">
         <meta name="twitter:title" content="Pulso Notícias">
-        <meta name="twitter:description" content="Portal de notícias de Vida Nova e Lauro de Freitas. Pulso Notícias cobre segurança, eventos, serviços públicos e tudo o que acontece no bairro.">
+        <meta name="twitter:description" content="Pulso Notícias é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo.">
         <meta name="twitter:image" content="{{asset('build/client/images/logo-blog.png')}}">
     @endif
 
@@ -82,59 +82,59 @@
             "url": "https://expressovidanova.com.br",
             "logo": "assets/images/logo-blog.png",
             "image": "assets/images/logo-blog.png",
-            "description": "Pulso Notícias é o portal de notícias locais de Vida Nova e Lauro de Freitas. Informações do bairro, segurança, eventos e atualizações da região.",
-            "foundingDate": "2019",
-            "email": "expressovidadnova24@gmail.com",
-            "telephone": "+55 71 98304-9469",
+            "description": "Pulso Notícias é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo." 
+            "foundingDate": "2023",
+            "email": "atendimento@whi.dev.br",
+            "telephone": "+55 71 99276-8360",
             "sameAs": [
-                "https://www.instagram.com/expressovidanova.com.br"
+                "https://www.instagram.com/agenciawhi",
+                "https://www.linkedin.com/company/106948313"
             ],
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Caminho 10, 30 - Vida Nova",
+                "streetAddress": "Rua Ápio Patrocínio, 148 - Boa Vista de São Caetano",
                 "addressLocality": "Salvador",
                 "addressRegion": "BA",
-                "postalCode": "Lauro de Freitas",
+                "postalCode": "40386-050",
                 "addressCountry": "BR"
             },
             "contactPoint": {
                 "@type": "ContactPoint",
-                "telephone": "+55 71 98304-9469",
+                "telephone": "+55 71 99276-8360",
                 "contactType": "customer service",
-                "email": "expressovidadnova24@gmail.com",
+                "email": "atendimento@whi.dev.br",
                 "areaServed": "BR",
-                "availableLanguage": ["pt", "en"]
+                "availableLanguage": ["Portuguese", "English"]
             },
             "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                "opens": "08:00",
-                "closes": "17:00"
+                "opens": "09:00",
+                "closes": "18:00"
             },
-            "identifier": {
-                "@type": "PropertyValue",
-                "propertyID": "CNPJ",
-                "value": "35.439.433/0001-22"
-            },
+            "duns": "39.985.136/0001-33",
             "slogan": "Pulso Notícias",
             "keywords": [
-                "Pulso Notícias",
-                "Notícias Vida Nova",
-                "Notícias Lauro de Freitas",
-                "Portal de notícias Vida Nova",
-                "Jornal local Vida Nova",
-                "Jornal de Lauro de Freitas",
-                "Notícias do bairro Vida Nova",
-                "Acontece em Vida Nova",
-                "Notícias da região de Lauro de Freitas",
-                "Atualidades Vida Nova",
-                "Notícias Bahia região metropolitana",
-                "Comunidade de Vida Nova",
-                "Segurança em Vida Nova",
-                "Eventos em Lauro de Freitas",
-                "Bairro Vida Nova Lauro de Freitas",
-                "Informações locais Vida Nova",
-                "Notícias da comunidade de Vida Nova"
+                "portal de notícias",
+                "notícias do Brasil",
+                "últimas notícias",
+                "notícias de hoje",
+                "notícias atualizadas",
+                "notícias em tempo real",
+                "notícias nacionais",
+                "notícias internacionais",
+                "notícias de política",
+                "notícias de economia",
+                "notícias de tecnologia",
+                "notícias de esportes",
+                "notícias do mundo",
+                "notícias da Bahia",
+                "notícias de Salvador",
+                "notícias da região metropolitana",
+                "notícias locais",
+                "notícias gerais",
+                "informação e atualidades",
+                "jornal online"
             ]
         }
     </script>

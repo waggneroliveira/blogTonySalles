@@ -60,7 +60,7 @@
                               </div>
                            </form>   
                            @if (Route::currentRouteName() == 'blog-search')
-                              <a href="{{ route('blog') }}#news" class="btn background-red rounded-0 text-white poppins-medium py-1 font-15">Limpar</a>
+                              <a href="{{ route('blogAll') }}#news" class="btn background-red rounded-0 text-white poppins-medium py-1 font-15">Limpar</a>
                            @endif                     
                         </div>
                      </div>
