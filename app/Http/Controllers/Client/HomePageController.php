@@ -2,28 +2,29 @@
 
 namespace App\Http\Controllers\Client;
 
-use Carbon\Carbon;
-use App\Models\Blog;
+use App\Http\Controllers\Controller;
 use App\Models\About;
+use App\Models\Announcement;
+use App\Models\BenefitTopic;
+use App\Models\Blog;
+use App\Models\BlogCategory;
+use App\Models\Contact;
 use App\Models\Event;
+use App\Models\Partner;
 use App\Models\PopUp;
+use App\Models\Report;
 use App\Models\Slide;
 use App\Models\Stack;
 use App\Models\Topic;
-use App\Models\Video;
-use App\Models\Report;
-use App\Models\Contact;
-use App\Models\Partner;
 use App\Models\Unionized;
-use App\Models\Announcement;
-use App\Models\BenefitTopic;
-use App\Models\BlogCategory;
+use App\Models\Video;
+use App\Services\FootballService;
 use App\Services\WeatherService;
-use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class HomePageController extends Controller
 {
-    public function index(WeatherService $weather)
+    public function index(WeatherService $weather, FootballService $service)
     {
         $blogSuperHighlights = Blog::whereHas('category', function($active){
             $active->where('active', 1);
@@ -120,12 +121,14 @@ class HomePageController extends Controller
         $popUp = PopUp::active()->first();
 
         $tempo = cache()->remember(
-            'weather_lauro_freitas',
+            'weather_salvador',
             now()->addMinutes(30),
-            fn () => $weather->current(-12.89, -38.33)
+            fn () => $weather->current(-12.9777, -38.5016)
         );
 
+        $standings = $service->standings();
         
+        // dd($standings);
         return view('client.blades.index', compact(
             'latestNews', 
             'recentCategories', 
@@ -141,8 +144,9 @@ class HomePageController extends Controller
             'events', 
             'popUp', 
             'tempo', 
-            'blogNoBairros')
-        );
+            'standings',
+            'blogNoBairros'
+        ));
     }
 
     public function filterByCategory($categorySlug = null)

@@ -43,57 +43,6 @@
     </script>
 @endif
 
-<script defer>
-    // Função para traduzir todos os elementos do widget
-    function translateWidgetElements() {
-    // Alterar "Standings" para "Classificação"
-    document.querySelectorAll('.fs-medium-title').forEach(element => {
-        if (element.textContent.trim() === 'Standings') {
-        element.textContent = 'Classificação';
-        }
-    });
-    
-    // Alterar título do link para "Campeonato Baiano"
-    document.querySelectorAll('a.fs-strong-title#replaceTitle').forEach(element => {
-        element.textContent = 'Campeonato Baiano';
-    });
-    
-    // Alterar "View All" para "ver mais"
-    document.querySelectorAll('.fs-header-actions-label').forEach(element => {
-        const text = element.textContent.trim();
-        if (text === 'View morell' || text === 'View more' || 
-            text.toLowerCase() === 'view more' ||
-            (text.toLowerCase().includes('view') && text.toLowerCase().includes('more'))) {
-        element.textContent = 'ver mais';
-        }
-    });
-    }
-
-    // Observar mudanças no widget
-    const observer = new MutationObserver(translateWidgetElements);
-    const widgetContainer = document.getElementById('fs-upcoming');
-    if (widgetContainer) {
-    observer.observe(widgetContainer, { 
-        childList: true, 
-        subtree: true,
-        characterData: true
-    });
-    }
-
-    // Executar imediatamente e periodicamente
-    translateWidgetElements();
-    setInterval(translateWidgetElements, 1000);
-
-    // Parar após 10 segundos (opcional)
-    setTimeout(() => {
-    observer.disconnect();
-    }, 10000);
-</script>
-
-<script defer type="module" src="https://widgets.tradingview-widget.com/w/br/tv-ticker-tape.js"></script>
-<tv-ticker-tape symbols='FOREXCOM:SPXUSD,FOREXCOM:NSXUSD,FOREXCOM:DJI,FX:EURUSD,BITSTAMP:BTCUSD,BITSTAMP:ETHUSD,CMCMARKETS:GOLD' show-hover theme="light"></tv-ticker-tape>
-
-<!-- TradingView Widget END -->
 @if (isset($blogSuperHighlights) && $blogSuperHighlights <> null)
     <section class="blog mb-0 mt-4">
         <div class="container">
@@ -301,38 +250,8 @@
                                 @include('client.includes.announcement')
                             </div>
                         @endif
-
-                        <div class="card card-body mt-4">
-                            <div class="border-bottom news mb-0">
-                                <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-end">
-                                    <h2 class="section-title d-table p-0 w-auto m-0 mb-3 poppins-bold font-28 title-blue">
-                                        Brasileirão <span id="year"></span>
-                                        <script defer>
-                                            const currentYear = (new Date).getFullYear();
-                                            document.getElementById("year").innerHTML = `${currentYear}`;
-                                        </script>
-                                    </h2>                                
-                                </div>
-                            </div>
-                            <div class="row justify-content-between px-3 mt-4">
-                                <div class="col-12 col-lg-7 border">
-                                    <div id="tour_standings"></div><script defer language="javascript">document.getElementById('tour_standings').innerHTML="<iframe src='https://www.aiscore.com/pt/tournament-brazilian-serie-a/r8lk2dil5t0736d/standings?isplugin=true'  height='1131' width='100%' scrolling='auto' border='0' frameborder='0'></iframe>";</script><style>body{margin:0;padding:0}</style>
-                                </div>
-                                <div class="col-12 col-lg-5 border border-lg-no-start mt-3 mt-lg-0">
-                                    <div id="tour_schedule"></div><script defer language="javascript">document.getElementById('tour_schedule').innerHTML="<iframe src='https://www.aiscore.com/pt/tournament-brazilian-serie-a/r8lk2dil5t0736d/schedule?isplugin=true'  height='1131' width='100%' scrolling='auto' border='0' frameborder='0'></iframe>";</script><style>body{margin:0;padding:0}</style>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                @endif   
-
-                <style>
-                     @media (max-width:576px) {
-                        #tour_standings iframe, #tour_schedule iframe{
-                            height: 760px !important;
-                        }
-                     }
-                </style>     
+                @endif      
 
                 <div class="col-lg-3 col-12" data-aos="fade-left" data-aos-delay="30">
                     @if ($blogRelacionados->count() > 0)                        
@@ -501,7 +420,7 @@
                                 </div>
         
                                 <div class="flex-grow-1">
-                                    <small class="m-0 poppins-bold font-15 title-blue">Lauro de Freitas</small>
+                                    <small class="m-0 poppins-bold font-15 title-blue">Salvador</small>
                                     <div class="m-0 poppins-bold font-15 title-blue">
                                         {{ $tempo['temperature'] }}°C
                                         <span class="m-0 poppins-regular font-15 text-muted">
@@ -514,7 +433,54 @@
                         </div>
                     @endif
                     <div class="mb-4">
-                        <div id="fs-standings"></div> <script defer> (function (w,d,s,o,f,js,fjs) { w['fsStandingsEmbed']=o;w[o] = w[o] || function () { (w[o].q = w[o].q || []).push(arguments) }; js = d.createElement(s), fjs = d.getElementsByTagName(s)[0]; js.id = o; js.src = f; js.async = 1; fjs.parentNode.insertBefore(js, fjs); }(window, document, 'script', 'mw', 'https://cdn.footystats.org/embeds/standings.js')); mw('params', { leagueID: 16467 }); </script>
+                        <table class="table table-striped table-sm align-middle">
+                            <thead>
+                                <tr>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">#</th>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">Time</th>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">P</th>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">J</th>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">V</th>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">E</th>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">D</th>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">SG</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach($standings as $team)
+                                    <tr>
+                                        <td class="p-2 m-0 poppins-regular font-15 title-blue">{{ $team['intRank'] ?? '-' }}</td>
+
+                                        <td class="py-2 d-flex align-items-center gap-2 m-0 poppins-regular font-15 title-blue">
+                                            <img 
+                                                src="{{ $team['strBadge'] ?? '' }}" 
+                                                width="20" 
+                                                height="20"
+                                                alt="{{ $team['strTeam'] ?? '' }}"
+                                            >
+
+                                            {{ $team['strTeam'] ?? '-' }}
+                                        </td>
+
+                                        <td class="py-2 m-0 poppins-semiBold font-15 title-blue">{{ $team['intPoints'] ?? 0 }}</td>
+
+                                        <td class="py-2 m-0 poppins-regular font-15 title-blue">{{ $team['intPlayed'] ?? 0 }}</td>
+
+                                        <td class="py-2 m-0 poppins-regular font-15 title-blue">{{ $team['intWin'] ?? 0 }}</td>
+
+                                        <td class="py-2 m-0 poppins-regular font-15 title-blue">{{ $team['intDraw'] ?? 0 }}</td>
+
+                                        <td class="py-2 m-0 poppins-regular font-15 title-blue">{{ $team['intLoss'] ?? 0 }}</td>
+
+                                        <td class="py-2 m-0 poppins-regular font-15 title-blue">{{ $team['intGoalDifference'] ?? 0 }}</td>
+                                    </tr>
+                                @endforeach                                
+                            </tbody>
+                        </table>
+                        <div class="text-center">
+                            <a href="https://www.google.com/search?q=classifica%C3%A7%C3%B5es+de+brasileir%C3%A3o+s%C3%A9rie+a&gs_lcrp=EgZjaHJvbWUqCggAEAAYsQMYgAQyCggAEAAYsQMYgAQyCggBEAAYsQMYgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBwgIEAAYgAQyBwgJEAAYgATSAQg0NjgwajBqN6gCCLACAfEFv9baH8u97f0&sourceid=chrome&ie=UTF-8&si=AL3DRZG6ddPTEA7vD0x7xAFHIx7BFchDqYb8GnAcqWDyknr39HhWDp1w9m9nAgEEDwzFjlv-XLCRfSB7uPvhYHjMZDRuwZjTLYNnF2PASdzlkV5OnUCZ2y4vV6KgllZLhuZJAKoY5EAbI4VUhSWh07xLMkP2CT35aB0bbKtfb9T9FUQBOgQnRn8VPGdN8M81a1pEBdz930A3TYwws240Nbz6z7P6ztG1lc0wtndA5krBBXfbdrYzUnoz7d1OvncY28GNxzbGPJJ53639DwcIB77uZNuf3aywPQ-A1Mdpc_PGbVwIoq0jEPXGpU01_h-lMeYYEUQFrdSR4Duc_DlqyYY7ARPpTxmkkPIz5276K4kHC-rTbqeyf5k%3D&ictx=1&ved=2ahUKEwie4qSuoIyTAxXIs5UCHcs9NgkQyNoBKAB6BAgTEAA" class="poppins-medium font-15 title-blue" target="_blank" rel="noopener noreferrer">Ver tabela completa</a>
+                        </div>
                     </div>
 
                     <!-- Todas as emergências em um único bloco -->
@@ -548,13 +514,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Ads Start -->
-                    @if ($announcements->count())                        
-                        <div class="mb-4">
-                            @include('client.includes.announcementVertical')
-                        </div>
-                    @endif
-                    <!-- Ads End -->
+
                 </div>
             </div>
         </div>

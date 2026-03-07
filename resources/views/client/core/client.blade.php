@@ -29,20 +29,20 @@
         <meta property="og:type" content="website">
         <meta property="og:title" content="Expresso Vida Nova">
         <meta property="og:description" content="Portal de notícias de Vida Nova e Lauro de Freitas. Expresso Vida Nova cobre segurança, eventos, serviços públicos e tudo o que acontece no bairro.">
-        <meta property="og:image" content="{{asset('build/client/images/expressovidadnova.png')}}">
+        <meta property="og:image" content="{{asset('build/client/images/logo-blog.png')}}">
 
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:url" content="{{ url()->current() }}">
         <meta name="twitter:title" content="Expresso Vida Nova">
         <meta name="twitter:description" content="Portal de notícias de Vida Nova e Lauro de Freitas. Expresso Vida Nova cobre segurança, eventos, serviços públicos e tudo o que acontece no bairro.">
-        <meta name="twitter:image" content="{{asset('build/client/images/expressovidadnova.png')}}">
+        <meta name="twitter:image" content="{{asset('build/client/images/logo-blog.png')}}">
     @endif
 
     
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="copyright" content="Direitos reservados WHI">
     <meta name="author" content="WHI">
-    <link rel="shortcut icon" href="#assets/images/expressovidadnova.png">
+    <link rel="shortcut icon" href="#assets/images/logo-blog.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>    
@@ -80,8 +80,8 @@
             "name": "Expresso Vida Nova",
             "legalName": "Expresso Vida Nova",
             "url": "https://expressovidanova.com.br",
-            "logo": "assets/images/expressovidadnova.png",
-            "image": "assets/images/expressovidadnova.png",
+            "logo": "assets/images/logo-blog.png",
+            "image": "assets/images/logo-blog.png",
             "description": "Expresso Vida Nova é o portal de notícias locais de Vida Nova e Lauro de Freitas. Informações do bairro, segurança, eventos e atualizações da região.",
             "foundingDate": "2019",
             "email": "expressovidadnova24@gmail.com",
@@ -146,15 +146,9 @@
     <header id="header" class="w-100 d-flex flex-column position p-0">   
         <div class="w-100 py-0">
             <div class="header-top py-2 mb-0 header-color">
-                <div class="container d-flex d-lg-none flex-wrap justify-content-center justify-content-lg-between align-items-center">
-                    <div class="logo-img px-0 py-2 rounded-2 d-flex justify-content-start align-items-center w-auto">
-                        <a href="{{route('index')}}">
-                            <img src="{{asset('build/client/images/expressovidadnova.png')}}" alt="Expresso Vida Nova" title="Expresso Vida Nova" class="img-fluid" style="width: 100px;">
-                        </a>
-                    </div>
-                    
+                <div class="container d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center">                    
                     <p class="text-white poppins-medium text-center text-lg-start font-15 mb-0 col-12 col-lg-6">
-                        Lauro de Freitas, BA | {{ \Carbon\Carbon::now()->translatedFormat('l, d \d\e F \d\e Y') }}
+                        Salvador, BA | {{ \Carbon\Carbon::now()->translatedFormat('l, d \d\e F \d\e Y') }}
                     </p>
 
                     <div class="col-12 col-lg-6 text-center d-none d-lg-block"> 
@@ -208,7 +202,7 @@
                 <div class="d-flex col-12 justify-content-between align-items-center wrap-logo-and-login">
                     <div class="logo-img px-0 py-2 rounded-2 d-flex justify-content-start align-items-center w-auto">
                         <a href="{{route('index')}}">
-                            <img src="{{asset('build/client/images/expressovidadnova.png')}}" alt="Expresso Vida Nova" title="Expresso Vida Nova" class="img-fluid">
+                            <img src="{{asset('build/client/images/logo-blog.png')}}" alt="Expresso Vida Nova" title="Expresso Vida Nova" class="img-fluid">
                         </a>
                     </div>
 
@@ -224,24 +218,8 @@
                     <div class="social-links d-flex justify-content-center align-items-center gap-4 text-center col-12 col-lg-auto">
                         <nav class="none site-navigation ul position-relative text-end width-75 h-60">
                             <ul class="d-flex flex-row justify-content-start align-items-center gap-3 mb-0 list-unstyled h-100">
-                                <li class="h-100 d-flex align-items-center px-2"><a href="{{route('index')}}" class="nav-link poppins-bold text-center font-12 text-uppercase">Principal</a></li>                                                   
-                                <li class="nav-item dropdown h-100 d-flex align-items-center px-2">
-                                    <a class="nav-link dropdown-toggle poppins-bold text-center font-12 text-uppercase" 
-                                    href="{{route('about')}}" 
-                                    id="sobreNosDropdown" 
-                                    role="button" 
-                                    data-bs-toggle="dropdown" 
-                                    aria-expanded="false">
-                                        Quem Somos <i class="bi bi-chevron-down"></i>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="sobreNosDropdown">
-                                        @if (isset($abouts) && $abouts->count() > 0) 
-                                            @foreach ($abouts as $about)                                        
-                                                <li><a class="dropdown-item poppins-medium text-start font-15" href="{{route('about')}}#{{$about->slug}}">{{$about->title}}</a></li>
-                                            @endforeach
-                                        @endif
-                                    </ul>
-                                </li>
+                                <li class="h-100 d-flex align-items-center px-2"><a href="{{route('index')}}" class="nav-link poppins-bold text-center font-12 text-uppercase">Home</a></li>                                                   
+
                                 <li class="nav-item dropdown h-100 d-flex align-items-center px-2">
                                     <a class="nav-link dropdown-toggle poppins-bold text-center font-12 text-uppercase" 
                                         href="{{ route('blog') }}" 
@@ -274,8 +252,6 @@
 
                                     </ul>
                                 </li>
-
-                                <li class="h-100 d-flex align-items-center px-2"><a href="{{route('client.event')}}" class="nav-link poppins-bold text-center font-12 text-uppercase {{ request()->routeIs('client.event') ? 'active' : '' }}">Eventos</a></li>
                                 <li class="h-100 d-flex align-items-center px-2"><a href="{{route('contact')}}" class="nav-link poppins-bold text-center font-12 text-uppercase {{ request()->routeIs('contact') ? 'active' : '' }}">Contato</a></li>
                             </ul>                      
                         </nav>
@@ -303,7 +279,7 @@
                         </button>                        
                     </div>
 
-                    <div class="d-none d-lg-flex d-flex justify-content-center align-items-center gap-2 login-desktop col-auto col-lg-8">   
+                    <div class="d-none d-lg-flex d-flex justify-content-end align-items-center gap-2 login-desktop col-auto col-lg-8">   
                         <div class="d-flex justify-content-between gap-3 flex-wrap align-items-center col-8 col-sm-5 col-md-6 col-lg-7">
                            <form action="{{route('blog-search')}}#news" class="search col-12" method="post">
                               @csrf
@@ -318,7 +294,7 @@
                            </form>
                         </div>                     
                         @if (!Auth::guard('client')->check())                            
-                            <div class="d-flex justify-content-start align-items-center gap-2 col-3 ms-3">
+                            <div class="d-flex justify-content-end align-items-center gap-2 col-3 ms-3">
                                 <svg width="24" height="28" viewBox="0 0 24 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M23.5294 27.2432C23.5294 27.657 23.2026 28 22.7994 28H0.72999C0.332619 28 0 27.6612 0 27.2432C0 20.5561 5.26724 15.1351 11.7647 15.1351C18.2622 15.1351 23.5294 20.5561 23.5294 27.2432ZM11.7647 13.6216C8.10988 13.6216 5.14706 10.5723 5.14706 6.81081C5.14706 3.0493 8.10988 0 11.7647 0C15.4195 0 18.3824 3.0493 18.3824 6.81081C18.3824 10.5723 15.4195 13.6216 11.7647 13.6216Z" fill="white"/>
                                 </svg>
@@ -591,30 +567,13 @@
             <button id="menu-close" aria-label="Fechar menu" class="col-2 btn-close-menu p-0 bg-transparent" type="button">&times;</button>
         </div>
         <div class="col-10 logo-img p-0 mb-2 rounded-2 d-flex justify-content-center align-items-center">
-            <img src="{{asset('build/client/images/expressovidadnova.png')}}" alt="Expresso Vida Nova" title="Expresso Vida Nova" class="img-fluid" style="width: 100px;">
+            <img src="{{asset('build/client/images/logo-blog.png')}}" alt="Expresso Vida Nova" title="Expresso Vida Nova" class="img-fluid" style="width: 100px;">
         </div>
         <div class="row justify-content-center gap-5">
             <nav class="mt-3">
                 <ul class="list-unstyled text-center">
-                    <li class="poppins-regular font-18 mb-3 font-mob"><a href="{{route('index')}}" class="text-white">Principal</a></li>
-                                        
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle poppins-regular text-white font-18 mb-3 font-mob" 
-                        href="{{route('about')}}" 
-                        id="sobreNosDropdown" 
-                        role="button" 
-                        data-bs-toggle="dropdown" 
-                        aria-expanded="false">
-                            Sobre Nós <i class="bi bi-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="sobreNosDropdown">
-                            @if (isset($abouts) && $abouts->count() > 0) 
-                                @foreach ($abouts as $about)                                        
-                                    <li class="m-0"><a class="dropdown-item poppins-regular font-15 font-mob" href="{{route('about')}}#{{$about->slug}}">{{$about->title}}</a></li>
-                                @endforeach
-                            @endif 
-                        </ul>
-                    </li>
+                    <li class="poppins-regular font-18 mb-3 font-mob"><a href="{{route('index')}}" class="text-white">Home</a></li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle poppins-regular font-18 font-mob mb-3 text-white" 
                             href="{{ route('blog') }}" 
@@ -638,7 +597,6 @@
                             @endif
                         </ul>
                     </li>
-                    <li class="poppins-regular font-18 mb-3 font-mob"><a href="{{route('client.event')}}" class="text-white">Eventos</a></li>
                     <li class="poppins-regular font-18 mb-3 font-mob"><a href="{{route('contact')}}" class="text-white">Contato</a></li>
                     <li class="poppins-regular font-18 mb-3 font-mob"><a href="https://policies.google.com/privacy?hl=pt-BR" target="_blank" rel="noopener noreferrer" class="text-white">Política de Privacidade</a></li>
                 </ul>
@@ -740,28 +698,11 @@
         <div class="container pt-4 pb-3">
             <div class="sitemap d-flex flex-column flex-md-row justify-content-start gap-5 align-items-center">
                 <div class=logo>
-                    <img src="{{asset('build/client/images/expressovidadnova.png')}}" alt="Expresso Vida Nova" title="Expresso Vida Nova" loading="lazy">
+                    <img src="{{asset('build/client/images/logo-footer.png')}}" alt="Expresso Vida Nova" title="Expresso Vida Nova" loading="lazy">
                 </div>
                 <ul class="list-unstyled text-start d-flex flex-column flex-md-row justify-content-center align-items-center gap-4 col-12 col-lg-8 mb-0">
-                    <li class="poppins-regular font-18 mb-3 font-mob"><a href="{{route('index')}}">Principal</a></li>
-                                        
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle poppins-regular font-18 mb-3 font-mob" 
-                        href="{{route('about')}}" 
-                        id="sobreNosDropdown" 
-                        role="button" 
-                        data-bs-toggle="dropdown" 
-                        aria-expanded="false">
-                            Sobre Nós <i class="bi bi-chevron-down"></i>
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="sobreNosDropdown">
-                            @if (isset($abouts) && $abouts->count() > 0) 
-                                @foreach ($abouts as $about)                                        
-                                    <li><a class="dropdown-item poppins-regular text-start font-15 font-mob" href="{{route('about')}}#{{$about->slug}}">{{$about->title}}</a></li>
-                                @endforeach
-                            @endif 
-                        </ul>
-                    </li>
+                    <li class="poppins-regular font-18 mb-3 font-mob"><a href="{{route('index')}}">Home</a></li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle poppins-regular font-18 font-mob mb-3" 
                             href="{{ route('blog') }}" 
@@ -785,7 +726,6 @@
                             @endif
                         </ul>
                     </li>
-                    <li class="poppins-regular font-18 mb-3 font-mob"><a href="{{route('client.event')}}">Eventos</a></li>
                     <li class="poppins-regular font-18 mb-3 font-mob"><a href="{{route('contact')}}">Contato</a></li>
                     <li class="poppins-regular font-18 mb-3 font-mob"><a href="https://policies.google.com/privacy?hl=pt-BR" target="_blank" rel="noopener noreferrer">Política de Privacidade</a></li>
                 </ul>

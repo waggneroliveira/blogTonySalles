@@ -1,36 +1,37 @@
 <?php
 
-use Inertia\Inertia;
+use App\Http\Controllers\Auth\AuthClientController;
+use App\Http\Controllers\Auth\PasswordEmailClientController;
+use App\Http\Controllers\Auth\ResetPasswordClientController;
+use App\Http\Controllers\Client\AboutPageController;
+use App\Http\Controllers\Client\BenefitPageController;
+use App\Http\Controllers\Client\BlogPageController;
+use App\Http\Controllers\Client\ContactPageController;
+use App\Http\Controllers\Client\EventPageController;
+use App\Http\Controllers\Client\HomePageController;
+use App\Http\Controllers\Client\JuridicoPageController;
+use App\Http\Controllers\Client\NoticiesPageController;
+use App\Http\Controllers\Client\RegionPageController;
+use App\Http\Controllers\ClientController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\FootballController;
+use App\Http\Controllers\FormIndexController;
+use App\Http\Controllers\NewsletterController;
+use App\Http\Middleware\AuthClientMiddleware;
 use App\Models\About;
-use App\Models\Report;
-use App\Models\Contact;
-use App\Models\Statute;
 use App\Models\Agreement;
-use App\Models\Direction;
 use App\Models\Announcement;
 use App\Models\BenefitTopic;
 use App\Models\BlogCategory;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\View;
-use Illuminate\Support\Facades\Route;
+use App\Models\Contact;
+use App\Models\Direction;
+use App\Models\Report;
+use App\Models\Statute;
 use Illuminate\Support\Facades\Artisan;
-use App\Http\Controllers\ClientController;
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\FormIndexController;
-use App\Http\Middleware\AuthClientMiddleware;
-use App\Http\Controllers\NewsletterController;
-use App\Http\Controllers\Auth\AuthClientController;
-use App\Http\Controllers\Client\BlogPageController;
-use App\Http\Controllers\Client\HomePageController;
-use App\Http\Controllers\Client\AboutPageController;
-use App\Http\Controllers\Client\EventPageController;
-use App\Http\Controllers\Client\RegionPageController;
-use App\Http\Controllers\Client\BenefitPageController;
-use App\Http\Controllers\Client\ContactPageController;
-use App\Http\Controllers\Client\JuridicoPageController;
-use App\Http\Controllers\Client\NoticiesPageController;
-use App\Http\Controllers\Auth\PasswordEmailClientController;
-use App\Http\Controllers\Auth\ResetPasswordClientController;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
+use Inertia\Inertia;
 
 require __DIR__ . '/dashboard.php';
 
@@ -86,33 +87,6 @@ Route::get('sobre', [AboutPageController::class, 'index'])->name('about');
 Route::get('eventos', [EventPageController::class, 'index'])->name('client.event');
 Route::get('blog/filter/{category?}', [HomePageController::class, 'filterByCategory'])
     ->name('blog.filter');
-
-// Route::get('/run-cron-interno', function () {
-//     $tokenEsperado = "fbaffa5c0ac7f47a89abdf8fa3eb4aa7";
-//     $tokenRecebido = request()->header('X-Cron-Auth');
-    
-//     if ($tokenRecebido !== $tokenEsperado) {
-//         return response('Token invalido', 403);
-//     }
-    
-//     Log::info('Cron interno iniciado');
-    
-//     Artisan::call('rss:g1bahia');
-//     Artisan::call('rss:govba');
-//     Artisan::call('rss:bahianoticias');
-    
-//     Log::info('Cron interno finalizado');
-    
-//     return 'Comandos executados com sucesso!';
-// });
-
-// Route::get('cron/rss', function () {
-//     Artisan::call('rss:g1bahia');
-//     Artisan::call('rss:govba');
-//     Artisan::call('rss:bahianoticias');
-
-//     return 'Comandos RSS executados com sucesso';
-// });
 
 // routes/web.php
 Route::get('/artisan-call/{command}', function ($command) {

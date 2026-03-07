@@ -20,6 +20,7 @@ class ImportG1RssBlogs extends Command
             'https://g1.globo.com/rss/g1/economia/',
             'https://g1.globo.com/rss/g1/educacao/',
             'https://g1.globo.com/rss/g1/tecnologia/',
+            'https://g1.globo.com/rss/g1/mundo/',
         ];
 
         foreach ($feeds as $url) {

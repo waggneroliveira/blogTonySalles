@@ -64,8 +64,7 @@ try {
     // Lista de comandos
     $commands = [
         'rss:g1bahia',
-        'rss:govba', 
-        'rss:bahianoticias'
+        'rss:govba',
     ];
     
     $sucessos = 0;
