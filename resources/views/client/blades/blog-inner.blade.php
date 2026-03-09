@@ -85,7 +85,7 @@
                                             <b>Fonte:</b> {{$blogInner->source}}
                                             <br>
                                             <a href="{{ $blogInner->external_link }}" target="_blank" rel="noopener noreferrer" class="text-underline text-primary">
-                                                Leia a matéria completa no site original.
+                                                Leia a matéria na integra.
                                             </a> 
                                         </small>
                                         <br>
@@ -100,7 +100,7 @@
                                             <b>Fonte:</b> Agência WHI
                                             <br>
                                             <a href="{{ 'https://www.whi.dev.br/blog/interna/' . $blogInner->slug }}" target="_blank" rel="noopener noreferrer" class="text-underline text-primary">
-                                                Leia a matéria completa no site original.
+                                                Leia a matéria na integra.
                                             </a> 
                                         </small>
                                         <br>

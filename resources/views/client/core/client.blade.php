@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#0d0d0d">
-    <meta name="description" content="Pulso Notícias é o portal de notícias locais de Vida Nova e Lauro de Freitas. Informações do bairro, segurança, eventos e atualizações da região.">
-    <meta name="keywords" content="Pulso Notícias, Notícias Vida Nova, Notícias Lauro de Freitas, Portal de notícias Vida Nova, Jornal local Vida Nova, Jornal de Lauro de Freitas, Notícias do bairro Vida Nova, Acontece em Vida Nova, Notícias da região de Lauro de Freitas, Atualidades Vida Nova, Notícias Bahia região metropolitana, Comunidade de Vida Nova, Segurança em Vida Nova, Eventos em Lauro de Freitas, Bairro Vida Nova Lauro de Freitas, Informações locais Vida Nova, Notícias da comunidade de Vida Nova">
+    <meta name="description" content="Pulso Notícias é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo.">
+    <meta name="keywords" content="Pulso Notícias é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo.">
     
     <title>Pulso Notícias</title>
     
