@@ -786,7 +786,7 @@
                     </script>
                 </div>
                 <div class=credits>
-                    <a href="#" target=_blank rel="noopener noreferrer">
+                    <a href="https://www.whi.dev.br/" target=_blank rel="noopener noreferrer">
                         <img src="{{asset('build/client/images/developed.svg')}}"  alt="WHI - Web de Alta Inovação" title="WHI - Web de Alta Inovação" loading=lazy>
                     </a>
                 </div>
