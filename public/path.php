@@ -28,7 +28,7 @@ $testPaths = [
     __DIR__ . '/vendor/autoload.php',                    // Mesmo diretório
     dirname(__DIR__) . '/vendor/autoload.php',           // Um nível acima
     dirname(dirname(__DIR__)) . '/vendor/autoload.php',  // Dois níveis acima
-    '/home/expressovidanova/expressoVidaNova_git/vendor/autoload.php',
+    '/home/tonysalles/blogTonySalles_git/vendor/autoload.php',
     $_SERVER['DOCUMENT_ROOT'] . '/../vendor/autoload.php',
     dirname($_SERVER['DOCUMENT_ROOT']) . '/vendor/autoload.php',
 ];
@@ -44,7 +44,7 @@ echo "<h3>Procurando artisan:</h3>";
 $artisanPaths = [
     __DIR__ . '/../artisan',
     dirname(__DIR__) . '/artisan',
-    '/home/expressovidanova/expressoVidaNova_git/artisan',
+    '/home/tonysalles/blogTonySalles_git/artisan',
     $_SERVER['DOCUMENT_ROOT'] . '/../artisan',
 ];
 

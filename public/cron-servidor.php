@@ -14,7 +14,7 @@ echo "📁 Este arquivo: " . __FILE__ . "<br>\n";
 flush();
 
 // CAMINHO ABSOLUTO CORRETO (confirmado pelo teste)
-$laravelRoot = '/home/expressovidanova/expressoVidaNova_git';
+$laravelRoot = '/home/tonysalles/blogTonySalles_git';
 $autoloadPath = $laravelRoot . '/vendor/autoload.php';
 
 echo "🔍 Laravel Root: " . $laravelRoot . "<br>\n";
