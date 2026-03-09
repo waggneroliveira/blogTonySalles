@@ -82,7 +82,7 @@
             "url": "https://expressovidanova.com.br",
             "logo": "assets/images/logo-blog.png",
             "image": "assets/images/logo-blog.png",
-            "description": "Pulso Notícias é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo." 
+            "description": "Pulso Notícias é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo.", 
             "foundingDate": "2023",
             "email": "atendimento@whi.dev.br",
             "telephone": "+55 71 99276-8360",
