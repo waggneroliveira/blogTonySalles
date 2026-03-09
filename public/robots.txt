@@ -1,8 +1,4 @@
 User-agent: *
-Disallow:
-
-User-agent: facebookexternalhit
-Disallow:
-
-User-agent: facebot
-Disallow:
+Disallow: 
+Disallow: /cgi-bin/
+Sitemap: https://www.tonysalles.com.br/sitemap.xml
