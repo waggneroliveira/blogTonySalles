@@ -74,15 +74,15 @@
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
-            "@type": "Organization",
-            "@id": "#organization",
+            "@type": "NewsMediaOrganization",
+            "@id": "#newsMediaOrganization",
             "name": "Pulso Notícias",
             "legalName": "Pulso Notícias",
             "url": "https://www.tonysalles.com.br",
             "logo": "https://www.tonysalles.com.br/assets/images/logo-blog.png",
             "image": "https://www.tonysalles.com.br/assets/images/logo-blog.png",
             "description": "Pulso Notícias é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo.", 
-            "foundingDate": "2023",
+            "foundingDate": "2023-01-01",
             "email": "atendimento@whi.dev.br",
             "telephone": "+55 71 99276-8360",
             "sameAs": [
@@ -105,7 +105,7 @@
                 "areaServed": "BR",
                 "availableLanguage": ["Portuguese", "English"]
             },
-            "duns": "39.985.136/0001-33",
+            "identifier": "39.985.136/0001-33",
             "slogan": "Pulso Notícias",
             "keywords": [
                 "portal de notícias",
@@ -135,7 +135,7 @@
      crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="organization" hidden></div>
+    <div id="newsMediaOrganization" hidden></div>
     <header id="header" class="w-100 d-flex flex-column position p-0">   
         <div class="w-100 py-0">
             <div class="header-top py-2 mb-0 header-color">
