@@ -48,7 +48,7 @@
                                     <div class="col-md-3 col-sm-12 p-0">
                                         <div class="d-flex justify-content-center flex-column gap-3 align-items-center bg-blue-light p-2 col-12 col-lg-11" style="min-height: 240px;">
                                             @if ($direction->path_image <> null)
-                                                <div class="image">
+                                                <div class="image" style="width: 50px; height:50px;">
                                                     <img src="{{asset('storage/' . $direction->path_image)}}" loading="lazy" class="h-100" alt="{{$direction->title}}">
                                                 </div>
                                                 <div class="description d-flex flex-column justify-content-center">

@@ -125,27 +125,10 @@ class HomePageController extends Controller
         $popUp = PopUp::active()->first();
 
         $tempo = cache()->remember(
-            'weather_salvador',
+            'weather_lauro_de_freitas',
             now()->addMinutes(30),
-            fn () => $weather->current(-12.9777, -38.5016)
+            fn () => $weather->current(-12.8944, -38.3272)
         );
-
-        // $standings = $service->standings();
-
-        // // 1. Busca no cache por 15 minutos (900 segundos) ou faz a requisição na API
-        // $standings = Cache::remember('tabela_brasileirao', 900, function () {
-        //     $apiKey = config('services.football_data.key', env('FOOTBALL_DATA_API_KEY'));
-
-        //     $response = Http::withHeaders([
-        //         'X-Auth-Token' => $apiKey,
-        //     ])->get('https://api.football-data.org/v4/competitions/BSA/standings');
-
-        //     if ($response->successful()) {
-        //         return $response->json()['standings'][0]['table'] ?? [];
-        //     }
-
-        //     return [];
-        // });
 
         // Força a leitura da chave do env ou do config
         $apiKey = '4754b23a33e54b2a9403bf1f87df7ca4' ?? config('services.football_data.key');

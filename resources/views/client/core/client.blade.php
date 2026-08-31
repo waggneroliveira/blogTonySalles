@@ -147,7 +147,7 @@
                     </div>
 
                     <p class="text-white poppins-regular text-center text-lg-start font-14 mb-0 col-12 col-lg-6">
-                        Salvador, BA | {{ \Carbon\Carbon::now()->translatedFormat('l, d \d\e F \d\e Y') }}
+                        Lauro de Freitas, BA | {{ \Carbon\Carbon::now()->translatedFormat('l, d \d\e F \d\e Y') }}
                     </p>
 
                     <div class="col-12 col-lg-6 text-center d-none d-lg-block"> 
@@ -218,6 +218,7 @@
                         <nav class="none site-navigation ul position-relative text-end width-75 h-60">
                             <ul class="d-flex flex-row justify-content-start align-items-center gap-3 mb-0 list-unstyled h-100">
                                 <li class="h-100 d-flex align-items-center px-2"><a href="{{route('index')}}" class="nav-link poppins-bold text-center font-12 text-uppercase">Home</a></li>                                                   
+                                <li class="h-100 d-flex align-items-center px-2"><a href="{{route('about')}}" class="nav-link poppins-bold text-center font-12 text-uppercase">Sobre</a></li>                                                   
 
                                 <li class="nav-item dropdown h-100 d-flex align-items-center px-2">
                                     <a class="nav-link dropdown-toggle poppins-bold text-center font-12 text-uppercase" 
@@ -701,6 +702,7 @@
                 </div>
                 <ul class="list-unstyled text-start d-flex flex-column flex-md-row justify-content-center align-items-center gap-4 col-12 col-lg-8 mb-0">
                     <li class="poppins-regular font-18 mb-3 font-mob"><a href="{{route('index')}}">Home</a></li>
+                    <li class="poppins-regular font-18 mb-3 font-mob"><a href="{{route('about')}}">Sobre</a></li>
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle poppins-regular font-18 font-mob mb-3" 

@@ -420,7 +420,7 @@
                                 </div>
         
                                 <div class="flex-grow-1">
-                                    <small class="m-0 poppins-bold font-15 title-blue">Salvador</small>
+                                    <small class="m-0 poppins-bold font-15 title-blue">Lauro de Freitas</small>
                                     <div class="m-0 poppins-bold font-15 title-blue">
                                         {{ $tempo['temperature'] }}°C
                                         <span class="m-0 poppins-regular font-15 text-muted">
@@ -433,55 +433,6 @@
                         </div>
                     @endif
                     <div class="mb-4">
-                        {{-- <table class="table table-striped table-sm align-middle">
-                            <thead>
-                                <tr>
-                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">#</th>
-                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">Time</th>
-                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">P</th>
-                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">J</th>
-                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">V</th>
-                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">E</th>
-                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">D</th>
-                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">SG</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                @foreach($standings as $team)
-                                    <tr>
-                                        <td class="p-2 m-0 poppins-regular font-15 title-blue">{{ $team['intRank'] ?? '-' }}</td>
-
-                                        <td class="py-2 d-flex align-items-center gap-2 m-0 poppins-regular font-15 title-blue">
-                                            <img 
-                                                src="{{ $team['strBadge'] ?? '' }}" 
-                                                width="20" 
-                                                height="20"
-                                                alt="{{ $team['strTeam'] ?? '' }}"
-                                            >
-
-                                            {{ $team['strTeam'] ?? '-' }}
-                                        </td>
-
-                                        <td class="py-2 m-0 poppins-semiBold font-15 title-blue">{{ $team['intPoints'] ?? 0 }}</td>
-
-                                        <td class="py-2 m-0 poppins-regular font-15 title-blue">{{ $team['intPlayed'] ?? 0 }}</td>
-
-                                        <td class="py-2 m-0 poppins-regular font-15 title-blue">{{ $team['intWin'] ?? 0 }}</td>
-
-                                        <td class="py-2 m-0 poppins-regular font-15 title-blue">{{ $team['intDraw'] ?? 0 }}</td>
-
-                                        <td class="py-2 m-0 poppins-regular font-15 title-blue">{{ $team['intLoss'] ?? 0 }}</td>
-
-                                        <td class="py-2 m-0 poppins-regular font-15 title-blue">{{ $team['intGoalDifference'] ?? 0 }}</td>
-                                    </tr>
-                                @endforeach                                
-                            </tbody>
-                        </table>
-                        <div class="text-center">
-                            <a href="https://www.google.com/search?q=classifica%C3%A7%C3%B5es+de+brasileir%C3%A3o+s%C3%A9rie+a&gs_lcrp=EgZjaHJvbWUqCggAEAAYsQMYgAQyCggAEAAYsQMYgAQyCggBEAAYsQMYgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBwgIEAAYgAQyBwgJEAAYgATSAQg0NjgwajBqN6gCCLACAfEFv9baH8u97f0&sourceid=chrome&ie=UTF-8&si=AL3DRZG6ddPTEA7vD0x7xAFHIx7BFchDqYb8GnAcqWDyknr39HhWDp1w9m9nAgEEDwzFjlv-XLCRfSB7uPvhYHjMZDRuwZjTLYNnF2PASdzlkV5OnUCZ2y4vV6KgllZLhuZJAKoY5EAbI4VUhSWh07xLMkP2CT35aB0bbKtfb9T9FUQBOgQnRn8VPGdN8M81a1pEBdz930A3TYwws240Nbz6z7P6ztG1lc0wtndA5krBBXfbdrYzUnoz7d1OvncY28GNxzbGPJJ53639DwcIB77uZNuf3aywPQ-A1Mdpc_PGbVwIoq0jEPXGpU01_h-lMeYYEUQFrdSR4Duc_DlqyYY7ARPpTxmkkPIz5276K4kHC-rTbqeyf5k%3D&ictx=1&ved=2ahUKEwie4qSuoIyTAxXIs5UCHcs9NgkQyNoBKAB6BAgTEAA" class="poppins-medium font-15 title-blue" target="_blank" rel="noopener noreferrer">Ver tabela completa</a>
-                        </div> --}}
-
                         <table class="table table-striped table-sm align-middle">
                             <thead>
                                 <tr>
@@ -528,10 +479,6 @@
                                 @endforeach                                
                             </tbody>
                         </table>
-
-                        <div class="text-center">
-                            <a href="https://www.google.com/search?q=classifica%C3%A7%C3%B5es+de+brasileir%C3%A3o+s%C3%A9rie+a" class="poppins-medium font-15 title-blue" target="_blank" rel="noopener noreferrer">Ver tabela completa</a>
-                        </div>
                     </div>
 
                     <!-- Todas as emergências em um único bloco -->

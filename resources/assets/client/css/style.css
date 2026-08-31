@@ -478,10 +478,9 @@ div[vw].enabled {
     margin: 0 !important;
 }
 body .uwy.userway_p1 .userway_buttons_wrapper {
-    top: inherit !important;
-    right: -28px !important;
+    top: 54% !important;
+    right: -36px !important;
     left: inherit !important;
-    bottom: 121px !important;
 }
 .site-navigation.ul li a {
     position: relative;
@@ -680,7 +679,7 @@ p {
     --text-color: #6c757d;
     --text-color-blog-inner: #6c757d;
     --title-color-blue: #31404B;
-    --cta-background-color: rgb(203 255 77 / 50%);
+    --cta-background-color: #BBD3F2;
     --nav-hover-color: #ffffff;
     --background-color-white: #ffffff;
     --background-color-grey: #F9F9F9;
