@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="theme-color" content="#0d0d0d">
-    <meta name="description" content="Pulso Notícias é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo.">
+    <meta name="description" content="Expresso Vida Nova é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo.">
     <meta name="keywords" content="portal de notícias, notícias do Brasil, notícias da Bahia, notícias de Salvador, últimas notícias">
-    <title>Pulso Notícias</title>
+    <title>Expresso Vida Nova</title>
     
     @if(isset($blogInner))
         <meta property="og:url" content="{{ url()->current() }}">
@@ -26,14 +26,14 @@
     @else
         <meta property="og:url" content="{{ url()->current() }}">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Pulso Notícias">
-        <meta property="og:description" content="Pulso Notícias é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo.">
+        <meta property="og:title" content="Expresso Vida Nova">
+        <meta property="og:description" content="Expresso Vida Nova é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo.">
         <meta property="og:image" content="{{asset('build/client/images/logo-blog.png')}}">
 
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:url" content="{{ url()->current() }}">
-        <meta name="twitter:title" content="Pulso Notícias">
-        <meta name="twitter:description" content="Pulso Notícias é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo.">
+        <meta name="twitter:title" content="Expresso Vida Nova">
+        <meta name="twitter:description" content="Expresso Vida Nova é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo.">
         <meta name="twitter:image" content="{{asset('build/client/images/logo-blog.png')}}">
     @endif
 
@@ -76,12 +76,12 @@
             "@context": "https://schema.org",
             "@type": "NewsMediaOrganization",
             "@id": "#newsMediaOrganization",
-            "name": "Pulso Notícias",
-            "legalName": "Pulso Notícias",
+            "name": "Expresso Vida Nova",
+            "legalName": "Expresso Vida Nova",
             "url": "https://www.tonysalles.com.br",
             "logo": "https://www.tonysalles.com.br/assets/images/logo-blog.png",
             "image": "https://www.tonysalles.com.br/assets/images/logo-blog.png",
-            "description": "Pulso Notícias é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo.", 
+            "description": "Expresso Vida Nova é um portal de notícias com informações atualizadas sobre política, economia, tecnologia, esportes e os principais acontecimentos do Brasil e do mundo.", 
             "foundingDate": "2023-01-01",
             "email": "atendimento@whi.dev.br",
             "telephone": "+55 71 99276-8360",
@@ -106,7 +106,7 @@
                 "availableLanguage": ["Portuguese", "English"]
             },
             "identifier": "39.985.136/0001-33",
-            "slogan": "Pulso Notícias",
+            "slogan": "Expresso Vida Nova",
             "keywords": [
                 "portal de notícias",
                 "notícias do Brasil",
@@ -201,7 +201,7 @@
                 <div class="d-flex col-12 justify-content-between align-items-center wrap-logo-and-login">
                     <div class="logo-img px-0 py-2 rounded-2 d-flex justify-content-start align-items-center w-auto">
                         <a href="{{route('index')}}">
-                            <img src="{{asset('build/client/images/logo-blog.png')}}" alt="Pulso Notícias" title="Pulso Notícias" class="img-fluid">
+                            <img src="{{asset('build/client/images/logo-blog.png')}}" alt="Expresso Vida Nova" title="Expresso Vida Nova" class="img-fluid">
                         </a>
                     </div>
 
@@ -567,7 +567,7 @@
             <button id="menu-close" aria-label="Fechar menu" class="col-2 btn-close-menu p-0 bg-transparent" type="button">&times;</button>
         </div>
         <div class="col-10 logo-img p-0 mb-2 rounded-2 d-flex justify-content-center align-items-center">
-            <img src="{{asset('build/client/images/logo-blog.png')}}" alt="Pulso Notícias" title="Pulso Notícias" class="img-fluid" style="width: 100px;">
+            <img src="{{asset('build/client/images/logo-blog.png')}}" alt="Expresso Vida Nova" title="Expresso Vida Nova" class="img-fluid" style="width: 100px;">
         </div>
         <div class="row justify-content-center gap-5">
             <nav class="mt-3">
@@ -698,7 +698,7 @@
         <div class="container pt-4 pb-3">
             <div class="sitemap d-flex flex-column flex-md-row justify-content-start gap-5 align-items-center">
                 <div class="logo">
-                    <img src="{{asset('build/client/images/logo-footer.png')}}" alt="Pulso Notícias" title="Pulso Notícias" loading="lazy">
+                    <img src="{{asset('build/client/images/logo-footer.png')}}" alt="Expresso Vida Nova" title="Expresso Vida Nova" loading="lazy">
                 </div>
                 <ul class="list-unstyled text-start d-flex flex-column flex-md-row justify-content-center align-items-center gap-4 col-12 col-lg-8 mb-0">
                     <li class="poppins-regular font-18 mb-3 font-mob"><a href="{{route('index')}}">Home</a></li>
@@ -777,7 +777,7 @@
                     <p id="footer-text" class="poppins-regular font-16 text-center text-lg-start text-white mb-0"></p>  
                     <script defer>
                         const currentYeaar = (new Date).getFullYear();
-                        document.getElementById("footer-text").innerHTML = `Copyright© ${currentYeaar} <span> Pulso Notícias todos os direitos reservados.</span>`
+                        document.getElementById("footer-text").innerHTML = `Copyright© ${currentYeaar} <span> Expresso Vida Nova todos os direitos reservados.</span>`
                     </script>
                 </div>
                 <div class=credits>
