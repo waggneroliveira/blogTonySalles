@@ -22,6 +22,9 @@ use App\Models\Video;
 use App\Services\FootballService;
 use App\Services\WeatherService;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Log;
 
 class HomePageController extends Controller
 {
@@ -127,11 +130,58 @@ class HomePageController extends Controller
             fn () => $weather->current(-12.9777, -38.5016)
         );
 
-        $standings = $service->standings();
+        // $standings = $service->standings();
 
-        $blogsWhi = BlogExternoWhi::with('category')->orderby('date', 'desc')->limit(15)->get();
+        // // 1. Busca no cache por 15 minutos (900 segundos) ou faz a requisição na API
+        // $standings = Cache::remember('tabela_brasileirao', 900, function () {
+        //     $apiKey = config('services.football_data.key', env('FOOTBALL_DATA_API_KEY'));
+
+        //     $response = Http::withHeaders([
+        //         'X-Auth-Token' => $apiKey,
+        //     ])->get('https://api.football-data.org/v4/competitions/BSA/standings');
+
+        //     if ($response->successful()) {
+        //         return $response->json()['standings'][0]['table'] ?? [];
+        //     }
+
+        //     return [];
+        // });
+
+        // Força a leitura da chave do env ou do config
+        $apiKey = '4754b23a33e54b2a9403bf1f87df7ca4' ?? config('services.football_data.key');
+
+        $standings = Cache::remember('tabela_brasileirao', 900, function () use ($apiKey) {
+            
+            // Faz a requisição ignorando verificação SSL caso esteja em ambiente local (Windows/XAMPP)
+            $response = Http::withoutVerifying()
+                ->withHeaders([
+                    'X-Auth-Token' => $apiKey,
+                ])
+                ->get('https://api.football-data.org/v4/competitions/BSA/standings');
+
+            if ($response->successful()) {
+                $data = $response->json();
+                return $data['standings'][0]['table'] ?? [];
+            }
+
+            // Registra no log do Laravel (storage/logs/laravel.log) para sabermos o motivo exato do erro
+            Log::error('Erro ao buscar tabela do Brasileirão', [
+                'status' => $response->status(),
+                'body'   => $response->body()
+            ]);
+
+            return [];
+        });
+
+        // Se por algum motivo o cache salvou vazio, apaga a chave do cache para tentar de novo no próximo refresh
+        if (empty($standings)) {
+            Cache::forget('tabela_brasileirao');
+        }
+
+        $blogNoBairo = Blog::with('category')->where('blog_category_id', '=', 1)->orderby('date', 'desc')->limit(15)->get();
 
         return view('client.blades.index', compact(
+            'standings', 
             'latestNews', 
             'recentCategories', 
             'contact',   
@@ -147,7 +197,7 @@ class HomePageController extends Controller
             'popUp', 
             'tempo', 
             'standings',
-            'blogsWhi',
+            'blogNoBairo',
             'blogNoBairros'
         ));
     }

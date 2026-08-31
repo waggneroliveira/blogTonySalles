@@ -13,6 +13,7 @@ class DatabaseSeeder extends Seeder
         User::factory(1)->create();
 
         $this->call([
+            BlogCategoriesSeeder::class,
             SettingThemeSeeder::class,
             RoleSeeder::class,
             PermissionsSeeder::class,

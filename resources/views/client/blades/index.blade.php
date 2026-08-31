@@ -433,7 +433,7 @@
                         </div>
                     @endif
                     <div class="mb-4">
-                        <table class="table table-striped table-sm align-middle">
+                        {{-- <table class="table table-striped table-sm align-middle">
                             <thead>
                                 <tr>
                                     <th class="py-2 m-0 poppins-semiBold font-15 title-blue">#</th>
@@ -480,6 +480,57 @@
                         </table>
                         <div class="text-center">
                             <a href="https://www.google.com/search?q=classifica%C3%A7%C3%B5es+de+brasileir%C3%A3o+s%C3%A9rie+a&gs_lcrp=EgZjaHJvbWUqCggAEAAYsQMYgAQyCggAEAAYsQMYgAQyCggBEAAYsQMYgAQyBwgCEAAYgAQyBwgDEAAYgAQyBwgEEAAYgAQyBwgFEAAYgAQyBwgGEAAYgAQyBwgHEAAYgAQyBwgIEAAYgAQyBwgJEAAYgATSAQg0NjgwajBqN6gCCLACAfEFv9baH8u97f0&sourceid=chrome&ie=UTF-8&si=AL3DRZG6ddPTEA7vD0x7xAFHIx7BFchDqYb8GnAcqWDyknr39HhWDp1w9m9nAgEEDwzFjlv-XLCRfSB7uPvhYHjMZDRuwZjTLYNnF2PASdzlkV5OnUCZ2y4vV6KgllZLhuZJAKoY5EAbI4VUhSWh07xLMkP2CT35aB0bbKtfb9T9FUQBOgQnRn8VPGdN8M81a1pEBdz930A3TYwws240Nbz6z7P6ztG1lc0wtndA5krBBXfbdrYzUnoz7d1OvncY28GNxzbGPJJ53639DwcIB77uZNuf3aywPQ-A1Mdpc_PGbVwIoq0jEPXGpU01_h-lMeYYEUQFrdSR4Duc_DlqyYY7ARPpTxmkkPIz5276K4kHC-rTbqeyf5k%3D&ictx=1&ved=2ahUKEwie4qSuoIyTAxXIs5UCHcs9NgkQyNoBKAB6BAgTEAA" class="poppins-medium font-15 title-blue" target="_blank" rel="noopener noreferrer">Ver tabela completa</a>
+                        </div> --}}
+
+                        <table class="table table-striped table-sm align-middle">
+                            <thead>
+                                <tr>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">#</th>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">Time</th>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">P</th>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">J</th>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">V</th>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">E</th>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">D</th>
+                                    <th class="py-2 m-0 poppins-semiBold font-15 title-blue">SG</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach($standings as $team)
+                                    <tr>
+                                        <td class="p-2 m-0 poppins-regular font-15 title-blue">{{ $team['position'] ?? '-' }}</td>
+
+                                        <td class="py-2 d-flex align-items-center gap-2 m-0 poppins-regular font-15 title-blue">
+                                            <img 
+                                                src="{{ $team['team']['crest'] ?? '' }}" 
+                                                width="20" 
+                                                height="20"
+                                                style="object-fit: contain;"
+                                                alt="{{ $team['team']['shortName'] ?? $team['team']['name'] }}"
+                                            >
+
+                                            {{ $team['team']['shortName'] ?? $team['team']['name'] ?? '-' }}
+                                        </td>
+
+                                        <td class="py-2 m-0 poppins-semiBold font-15 title-blue">{{ $team['points'] ?? 0 }}</td>
+
+                                        <td class="py-2 m-0 poppins-regular font-15 title-blue">{{ $team['playedGames'] ?? 0 }}</td>
+
+                                        <td class="py-2 m-0 poppins-regular font-15 title-blue">{{ $team['won'] ?? 0 }}</td>
+
+                                        <td class="py-2 m-0 poppins-regular font-15 title-blue">{{ $team['draw'] ?? 0 }}</td>
+
+                                        <td class="py-2 m-0 poppins-regular font-15 title-blue">{{ $team['lost'] ?? 0 }}</td>
+
+                                        <td class="py-2 m-0 poppins-regular font-15 title-blue">{{ $team['goalDifference'] ?? 0 }}</td>
+                                    </tr>
+                                @endforeach                                
+                            </tbody>
+                        </table>
+
+                        <div class="text-center">
+                            <a href="https://www.google.com/search?q=classifica%C3%A7%C3%B5es+de+brasileir%C3%A3o+s%C3%A9rie+a" class="poppins-medium font-15 title-blue" target="_blank" rel="noopener noreferrer">Ver tabela completa</a>
                         </div>
                     </div>
 
@@ -619,106 +670,7 @@
         </div>
     </section>
 @endif
-@if ($blogsWhi->count() > 0) 
-    <section id="no-bairro" data-aos="fade-up" data-aos-delay="30">
-        <div class="container border-bottom news mb-0 p-0">
-            <div class="px-0 d-flex flex-row justify-content-between align-items-center w-100">
-                <h2 class="section-title d-table p-0 w-auto m-0 mb-3 poppins-bold font-28 title-blue">
-                    Descubra também
-                </h2>
 
-                <!-- Navegação EXTERNA -->
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="swiper-button-prev-one text-center">
-                        <svg width="17" height="25" viewBox="0 0 17 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12.6671 0L0.000387192 12.5L12.6671 25L16.2617 21.4526L7.18705 12.5L16.2617 3.54737L12.6671 0Z" fill="black"/>
-                        </svg>
-                    </div>
-                    <div class="swiper-button-next-one text-center">
-                        <svg width="17" height="25" viewBox="0 0 17 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.59467 25L16.2613 12.5L3.59467 0L0 3.54737L9.07467 12.5L0 21.4526L3.59467 25Z" fill="black"/>
-                        </svg>             
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="container-fluid m-auto me-0 mt-5 pe-0 pad-mobi" style="padding-left: 100px;">
-            <div class="swiper myNewsSwiper">            
-                <div class="swiper-wrapper" style="align-items: flex-start;">
-                    @foreach($blogsWhi as $whiBlog)
-                        @php
-                            \Carbon\Carbon::setLocale('pt_BR');
-                            $dataFormatada = \Carbon\Carbon::parse($whiBlog->date)->translatedFormat('d \d\e F \d\e Y');
-                        @endphp
-                        
-                        <div class="swiper-slide">
-                            <article class="col-12">
-                                <div class="d-flex flex-column align-items-center bg-white mb-4 overflow-hidden position-relative">
-
-                                    <div class="position-absolute mt-2 start-0">
-                                        <span class="badge rounded-0 badge-primary poppins-semiBold font-10 text-uppercase py-2 px-2 mr-2 background-red">
-                                            {{ $whiBlog->category->title }}
-                                        </span>
-                                    </div>
-
-                                    <img loading="lazy"
-                                    class="img-fluid w-100 rounded-1"
-                                    src="{{ $whiBlog->thumbnail_url }}"
-                                    alt="{{ $whiBlog->title }}"
-                                    style="height:232px; aspect-ratio:1/1; object-fit:cover;">
-
-                                    <div class="col-12 my-3 h-100 px-2 d-flex flex-column justify-content-center position-relative">                        
-                                        <a href="{{ route('blog-inner', $whiBlog->slug) }}" class="underline">
-                                            <h3 class="h6 m-0 poppins-bold font-14 title-blue">
-                                                {{ Str::limit($whiBlog->title, 60) }}
-                                            </h3>
-                                        </a>
-
-                                        <p class="text-color my-3 poppins-regular font-15">
-                                            {!! substr(strip_tags($whiBlog->text), 0, 200) !!}...
-                                        </p>
-
-                                        <div class="d-flex justify-content-between align-items-center w-100">
-                                            <p class="text-color mb-0 poppins-regular font-12 col-8">{{$dataFormatada}}</p>
-
-                                            <div id="socialLinks-filter-two-{{$whiBlog->id}}" class="social-links home opacity-0">
-                                                <div class="d-flex gap-2">
-                                                    <a href="https://api.whatsapp.com/send?text={{ urlencode($whiBlog->title . ' ' . route('blog-inner', ['slug' => $whiBlog->slug])) }}" 
-                                                    class="rounded-circle btn btn-sm bg-transparent p-0" target="_blank">
-                                                        <i class="fab fa-whatsapp text-dark"></i>
-                                                    </a>
-
-                                                    <a href="https://twitter.com/intent/tweet?url={{ urlencode(route('blog-inner', ['slug' => $whiBlog->slug])) }}&text={{ urlencode($whiBlog->title) }}" 
-                                                    class="rounded-circle btn btn-sm bg-transparent p-0" target="_blank">
-                                                        <i class="fab fa-x-twitter text-dark"></i>
-                                                    </a>
-
-                                                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(route('blog-inner', ['slug' => $whiBlog->slug])) }}" 
-                                                    class="rounded-circle btn btn-sm bg-transparent p-0" target="_blank">
-                                                        <i class="fab fa-facebook-f text-dark"></i>
-                                                    </a>
-                                                </div>
-                                            </div>  
-
-                                            <button id="btnShare-filter-two-{{$whiBlog->id}}" 
-                                                    data-target="socialLinks-filter-two-{{$whiBlog->id}}"
-                                                    class="share-button d-flex">
-                                                <svg width="18" height="20" viewBox="0 0 24 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M4.28845 8.58841C1.92459 8.58841 0 10.5692 0 13.002C0 15.4348 1.92459 17.4155 4.28845 17.4155C5.68567 17.4155 6.92779 16.7195 7.70969 15.6506L15.6837 20.0897C15.5186 20.5571 15.4231 21.0603 15.4231 21.5864C15.4231 24.0193 17.3477 26 19.7115 26C22.0754 26 24 24.0193 24 21.5864C24 19.1536 22.0754 17.1729 19.7115 17.1729C18.3143 17.1729 17.0722 17.8689 16.2903 18.9378L8.31633 14.4987C8.48136 14.0313 8.57691 13.5281 8.57691 12.9982C8.57691 12.4682 8.47516 11.9356 8.3002 11.4554L16.2033 6.94346C16.9789 8.08134 18.262 8.82714 19.71 8.82714C22.0739 8.82714 23.9985 6.84639 23.9985 4.41357C23.9985 1.98074 22.0739 0 19.71 0C17.3462 0 15.4216 1.98074 15.4216 4.41357C15.4216 4.88736 15.4973 5.34584 15.6313 5.77367L7.67731 10.3151C6.89306 9.26915 5.66339 8.58848 4.28466 8.58848L4.28845 8.58841Z" fill="#282828"/>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </div>    
-                    @endforeach
-                </div>
-            </div>
-        </div>
-    </section>
-@endif
 <style>
 .swiper-button-prev-one,
 .swiper-button-next-one {

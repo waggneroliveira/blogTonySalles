@@ -12,15 +12,15 @@
                     <div class="col-md-8 col-lg-6 col-xl-4">
                         <div class="card bg-pattern header-color">
                             <div class="card-body p-4">
-                                <div class="text-center w-100 m-auto">
+                                {{-- <div class="text-center w-100 m-auto">
                                     <div class="auth-brand">
                                         <div class="logo-img px-3 py-2 rounded-2 d-flex justify-content-center align-items-center">
                                             <a href="{{route('blog')}}">
-                                                <img src="{{asset('build/client/images/logo.svg')}}" alt="Sindacs-BA" title="Sindacs-BA" class="img-fluid">
+                                                <img src="{{asset('build/client/images/logo-blog.png')}}" alt="Expresso Vida Nova" title="Expresso Vida Nova" class="img-fluid">
                                             </a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <div class="mt-3 text-center">
                                     <svg version="1.1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 98 98" style="height: 120px;" xml:space="preserve">
@@ -77,7 +77,7 @@
                                     <p class="poppins-regular font-15 text-white mt-3"> Um e-mail foi enviado para  <b>{{$email}}</b>.
                                         Por favor, verifique sua caixa de entrada e siga as instruções para prosseguir com a redefinição de sua senha.
                                     </p>
-                                    <a href="{{route('blog')}}" class="btn w-100 background-red poppins-medium font-15 text-white mt-3">Voltar</a>
+                                    <a href="{{route('blogAll')}}" class="btn w-100 background-red poppins-medium font-15 text-white mt-3">Voltar</a>
                                 </div>
 
                             </div> <!-- end card-body -->

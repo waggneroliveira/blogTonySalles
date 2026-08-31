@@ -31,7 +31,8 @@ use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\View;
-use Inertia\Inertia;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Cache;
 
 require __DIR__ . '/dashboard.php';
 
@@ -88,28 +89,47 @@ Route::get('eventos', [EventPageController::class, 'index'])->name('client.event
 Route::get('blog/filter/{category?}', [HomePageController::class, 'filterByCategory'])
     ->name('blog.filter');
 
+// Route::get('/tabela-brasileirao', function () {
+// $apiKey = env('FOOTBALL_DATA_API_KEY');
+
+// // Salva o retorno em cache por 15 minutos (900 segundos)
+// $table = Cache::remember('tabela_brasileirao', 900, function () use ($apiKey) {
+//     $response = Http::withHeaders([
+//         'X-Auth-Token' => $apiKey,
+//     ])->get('https://api.football-data.org/v4/competitions/BSA/standings');
+
+//     if ($response->successful()) {
+//         return $response->json()['standings'][0]['table'] ?? [];
+//     }
+
+//     return [];
+// });
+
+//     return view('brasileirao', compact('table'));
+// });
+
 // routes/web.php
-Route::get('/artisan-call/{command}', function ($command) {
-    // Mapeia os comandos
-    $commandMap = [
-        'rss-g1bahia' => 'rss:g1bahia',
-        'rss-govba' => 'rss:govba',
-        'rss-bahianoticias' => 'rss:bahianoticias'
-    ];
+// Route::get('/artisan-call/{command}', function ($command) {
+//     // Mapeia os comandos
+//     $commandMap = [
+//         'rss-g1bahia' => 'rss:g1bahia',
+//         'rss-govba' => 'rss:govba',
+//         'rss-bahianoticias' => 'rss:bahianoticias'
+//     ];
     
-    if (!isset($commandMap[$command])) {
-        abort(404);
-    }
+//     if (!isset($commandMap[$command])) {
+//         abort(404);
+//     }
     
-    // Executa o comando
-    Artisan::call($commandMap[$command]);
+//     // Executa o comando
+//     Artisan::call($commandMap[$command]);
     
-    return response()->json([
-        'success' => true,
-        'command' => $commandMap[$command],
-        'time' => now()->toDateTimeString()
-    ]);
-})->middleware('auth.basic'); // Adicione autenticação básica!
+//     return response()->json([
+//         'success' => true,
+//         'command' => $commandMap[$command],
+//         'time' => now()->toDateTimeString()
+//     ]);
+// })->middleware('auth.basic');
 
 View::composer('client.core.client', function ($view) {
     $blogCategories = BlogCategory::whereHas('blogs')
