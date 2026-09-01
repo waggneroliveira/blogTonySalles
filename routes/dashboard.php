@@ -143,12 +143,12 @@ Route::prefix('painel/')->group(function () {
         ->parameters(['sessao-anuncie'=>'report']);
 
         //DIRECTION
-        Route::resource('a-direcao', DirectionController::class)
-        ->parameters(['a-direcao' => 'direction'])
+        Route::resource('topico-sobre', DirectionController::class)
+        ->parameters(['topico-sobre' => 'direction'])
         ->names('admin.dashboard.direction');
-        Route::post('a-direcao/delete', [DirectionController::class, 'destroySelected'])
+        Route::post('topico-sobre/delete', [DirectionController::class, 'destroySelected'])
         ->name('admin.dashboard.direction.destroySelected');
-        Route::post('a-direcao/sorting', [DirectionController::class, 'sorting'])
+        Route::post('topico-sobre/sorting', [DirectionController::class, 'sorting'])
         ->name('admin.dashboard.direction.sorting');
         //VIDEO
         Route::resource('videos', VideoController::class)
