@@ -16,7 +16,7 @@
         <label for="description" class="form-label">link</label>
         <input 
             type="text" 
-            name="description" 
+            name="link" 
             class="form-control" 
             id="description{{ isset($report->id) ? $report->id : '' }}" 
             value="{{ isset($report) ? $report->description : '' }}" 
