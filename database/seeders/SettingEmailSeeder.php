@@ -17,10 +17,10 @@ class SettingEmailSeeder extends Seeder
             'mail_mailer' => 'smtp',
             'mail_host' => 'smtp.gmail.com',
             'mail_port' => 465,
-            'mail_username' => 'waggner.447@gmail.com',
-            'mail_password' => 'aggd cvvg ljkp gxli',
+            'mail_username' => 'exemplo@gmail.com',
+            'mail_password' => 'senhagoogle',
             'mail_encryption' => 'ssl',
-            'mail_from_address' => 'waggner.447@gmail.com',
+            'mail_from_address' => 'exemplo@gmail.com',
             'mail_from_name' => 'WHI - Web de Alta inspiração',
         ]);
     }
