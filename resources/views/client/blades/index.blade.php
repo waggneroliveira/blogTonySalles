@@ -731,7 +731,7 @@
             </div>
         </div>
 
-        <div class="py-3 mt-5 d-flex justify-content-start align-items-center gap-2 flex-wrap">      
+        <div class="py-3 mt-5 row row-cols-4 g-2">      
             @foreach($events as $event)                        
                 <article class="col-12 col-sm-6 col-lg-3">
                     <div class="d-flex align-items-center bg-white mb-3 overflow-hidden shadow-video-current" style="height: 80px;">
